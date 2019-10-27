@@ -43,9 +43,11 @@ void Box::onSizeHint(SizeHintEvent& ev)
   }
 
   int visibleChildren = 0;
-  for (auto child : children()) {
-    if (!child->hasFlags(HIDDEN))
-      ++visibleChildren;
+  if (children().size()> 0){
+    for (auto child : children()) {
+      if (!child->hasFlags(HIDDEN))
+        ++visibleChildren;
+    }
   }
 
   Size prefSize(0, 0);
